@@ -1,0 +1,7 @@
+name: HuBERT
+_target_: framework.model.feature_extractor.hubert.HuBERT
+
+finetune: true
+modelpath_processor: facebook/hubert-xlarge-ls960-ft
+modelpath_audiomodel: facebook/hubert-base-ls960
+output_framerate: 50

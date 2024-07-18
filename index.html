@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ProbTalk3D produces facial animation for 3D characters based on speech">
+  <meta name="keywords" content="ProbTalk3D, VQ-VAE, Animation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ProbTalk3D: Non-Deterministic Emotion Controllable Speech-Driven 3D Facial Animation Synthesis Using VQ-VAE</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ProbTalk3D:</h1>
+          <h2 class="title is-3 publication-title">Non-Deterministic Emotion Controllable Speech-Driven 3D Facial Animation Synthesis Using VQ-VAE</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"> <a href="https://wsc462.wixsite.com/scwu"> Sichun Wu </a>, </span>
+            <span class="author-block"> <a href="https://www.uu.nl/staff/KIHaque"> Kazi Injamamul Haque </a>, </span>
+            <span class="author-block"> <a href="https://www.uu.nl/staff/ZYumak"> Zerrin Yumak </a> </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Utrecht University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/?.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              </span>
+
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="#video-container" class="button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/uuembodiedsocialai/ProbTalk3D"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            3D facial animation is crucial in video games, films, and entertainment industries.
+            With advancements in AI and deep learning, research is increasingly focused on data-driven methods for facial animation synthesis.
+            Non-deterministic deep learning methodologies are becoming popular due to their ability to generate realistic and diverse outputs.
+            These methods have been extensively studied in various fields, especially in image synthesis.
+            However, their usage in 3D facial animation generations has received comparatively less attention.
+            Our work introduces a probabilistic model ProbTalk3D, leveraging VQ-VAE for facial motion learning and a conditioned network for emotion controllable speech-driven animation systhesis.
+            We provide extensive comparative analyses, comparing ProbTalk3D with the latest VAE and diffusion based models.
+            Evaluations demonstrate that our proposed model achieves comparable or superior performance compared to state-of-the-art models.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div id="video-container" class="publication-video">
+          <iframe src="./static/videos/ProbTalk3D.mp4"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> <br>
+    <!--/ Paper video. -->
+
+
+    <!-- Methodology -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Methodology </h2>
+        <div class="content has-text-justified">
+          ProbTalk3D employs a two-stage training approach: first, it learns a motion prior that has a VQ-VAE based autoencoder structure;
+          second, it trains a transformer-based neural network for facial motion synthesis conditioned on speech and style,
+          leveraging the motion prior acquired in the first stage.
+        </div>
+          <h3 class="title is-5">Stage-1 Training</h3>
+            <div class="content has-text-justified">
+              In the first stage, the transformer-based Motion Autoencoder is trained solely on motion data.
+              The encoder transfers motion to a latent vector. Subsequently, a discrete codebook is learned through vector quantization to model the data distribution.
+              The decoder is trained to reconstruct the input from the quantized vector.
+              This process effectively learns a motion prior capable of encoding motion input into a meaningful latent representation.
+            </div>
+            <div class="methodology-image">
+            <img src="./static/images/stage1.png"> </img>
+            </div> <br>
+
+          <h3 class="title is-5">Stage-2 Training</h3>
+            <div class="content has-text-justified">
+              In the second stage, we incorporate an audio encoder and train the model on paired audio-motion data.
+              The Audio Encoder is transformer-based and includes a pre-trained HuBERT model. During this stage, the parameters of the Motion Autoencoder are frozen.
+              Given an audio input, HuBERT extracts audio features, which are then processed to be mapped to the motion latent space.
+              This mapping is conditional on the Style Vector, which allows the model to learn different speaking styles, emotional expressions, and emotion intensities.
+            </div>
+            <div class="methodology-image">
+            <img src="./static/images/stage2.png"> </img>
+            </div><br>
+
+          <h3 class="title is-5">Inference</h3>
+            <div class="content has-text-justified">
+              During inference, the Motion Encoder is excluded, and the remaining components are used to generate facial animation from audio input.
+              To introduce non-determinism into the model's outputs, we employ stochastic sampling in the quantization process.
+              Specifically, we transform the distance between input vectors and codebook embeddings into probabilities, enabling us to sample codebook embeddings based on them.
+            </div>
+            <div class="methodology-image">
+            <img src="./static/images/inference.png"> </img>
+            </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    <!--/ Methodology -->
+
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre>
+      <code>
+        @inproceedings{
+        }
+      </code>
+    </pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website based on the <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page.
+            If you want to reuse their source code, please credit them appropriately.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

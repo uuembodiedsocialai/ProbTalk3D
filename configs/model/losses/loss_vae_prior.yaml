@@ -1,0 +1,17 @@
+_target_: framework.model.losses.compute_vae_prior.ComputeLosses
+
+## Loss terms
+# KL divergence loss lmd
+lmd_kl: 1.0e-04
+kl: ${.lmd_kl}
+kl_func: ${model.func_kl}
+
+## Reconstruction loss lmd
+lmd_exp_recons: 1.5       # expression parameters
+recons_exp: ${.lmd_exp_recons}
+recons_exp_func: ${model.func_recons}
+
+lmd_jaw_recons: 1         # jaw parameters
+recons_jaw: ${.lmd_jaw_recons}
+recons_jaw_func: ${model.func_recons}
+

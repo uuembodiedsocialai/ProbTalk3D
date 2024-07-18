@@ -1,0 +1,6 @@
+defaults:
+  - /callback/last_checkpoint@last_ckpt
+  - /callback/best_epoch_checkpoint@best_epoch_ckpt
+  - /callback/progress@progress
+  - /callback/early_stopping@early_stopping
+

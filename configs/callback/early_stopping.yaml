@@ -1,0 +1,5 @@
+_target_: pytorch_lightning.callbacks.EarlyStopping
+monitor: 'total/val'  # Monitoring metric
+patience: 5           # Number of epochs with no improvement after which training will be stopped
+mode: 'min'           # 'min' for minimize loss, 'max' for maximize accuracy
+verbose: True         # Print EarlyStopping updates

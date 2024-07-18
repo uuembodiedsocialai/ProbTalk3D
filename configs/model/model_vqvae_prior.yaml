@@ -1,0 +1,20 @@
+modelname: VQVAE Motion Autoencoder
+_target_: framework.model.model_vqvae_prior.VQVAE
+
+# flag
+vqvae_prior: true
+
+# codebook parameters
+n_embed: 256
+zquant_dim: 128
+
+working_dir: ${path.working_dir}
+
+defaults:
+  - motion_encoder: transformer_encoder
+  - motion_decoder: transformer_decoder
+  - losses: loss_vqvae_prior
+  - optim: adamw
+  - /model/losses/function/l1@func_recons
+
+

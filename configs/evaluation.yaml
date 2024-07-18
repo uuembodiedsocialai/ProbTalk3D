@@ -1,0 +1,64 @@
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+
+seed: 1234
+
+logger_level: INFO
+
+split: test
+number_of_samples: 1
+
+# VAE diversity control
+mean: false
+fact: 20
+
+# VQVAE diversity control
+temperature: 0.2
+k: 1  # not necessary
+
+# Diffusion diversity control
+guidance: 1.0
+
+# VQVAE sample or not, ture by default
+sample: true
+
+folder: ???
+version: 0
+ckpt_name: last.ckpt
+last_ckpt_path: ${get_last_checkpoint:${folder},${version},${ckpt_name}}
+
+device: null
+
+region_path: ${path.datasets}/regions
+reference_path: ${path.datasets}/flame_zero_pose.npy
+
+# Transfer to vertex space
+flame:
+  flame_model_path: ${path.deps}/flame/model/generic_model.pkl
+  static_landmark_embedding_path: ${path.deps}/flame/model/flame_static_embedding.pkl
+  dynamic_landmark_embedding_path: ${path.deps}/flame/model/flame_dynamic_embedding.npy
+  shape_params: 300
+  expression_params: 100
+  pose_params: 6
+  use_face_contour: true
+  use_3D_translation: true    # False for RingNet project
+  optimize_eyeballpose: true  # False for RingNet project
+  optimize_neckpose: true     # False for RingNet project
+  num_worker: 4
+  batch_size: 32              # seq_len
+  ring_margin: 0.5
+  ring_loss_weight: 1.0
+
+# Composing nested config with default
+defaults:
+  - data: null
+  - machine: null
+  - trainer: null
+  - /path@path
+  - override hydra/job_logging: rich    # custom
+  - override hydra/hydra_logging: rich  # custom
+  - _self_
+
+data.batch_size: 1

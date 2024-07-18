@@ -1,0 +1,23 @@
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+
+logger_level: INFO
+
+motionpath: ${path.datasets}/mead/param
+
+# heatmap
+pred_path: ${path.code_dir}/results/generation/vqvae_pred/stage_2/0.2
+reference_path: ${path.datasets}/flame_zero_pose.obj
+
+# animation curve
+pred_path_multi: ${path.code_dir}/results/generation/vqvae_pred/stage_2/0.2_multi
+
+# Composing nested config with default
+defaults:
+  - logger: none
+  - /path@path
+  - override hydra/job_logging: rich    # custom
+  - override hydra/hydra_logging: rich  # custom
+  - _self_

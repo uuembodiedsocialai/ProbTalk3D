@@ -1,0 +1,55 @@
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+
+seed: 1234
+
+logger_level: INFO
+
+number_of_samples: 1
+
+# VAE diversity control
+mean: false
+fact: 20
+
+# VQVAE diversity control
+temperature: 0.2
+k: 1  # not necessary
+
+# VQVAE sample or not, ture by default
+sample: true
+
+folder: ???
+version: 0
+ckpt_name: last.ckpt
+last_ckpt_path: ${get_last_checkpoint:${folder},${version},${ckpt_name}}
+
+folder_prior: ""
+version_prior: ""
+
+device: null
+
+nfeats: 53      # motion features dimension
+input_path: ??? # audio input path
+
+# style one_hot
+id: null        # ['M003', 'M005', 'M007', 'M009', 'M011', 'M012', 'M013', 'M019', 'M022', 'M023',
+                #  'M024', 'M025', 'M026', 'M027', 'M028', 'M029', 'M030', 'M031', 'W009', 'W011',
+                #  'W014', 'W015', 'W016', 'W018', 'W019', 'W021', 'W023', 'W024', 'W025', 'W026',
+                #  'W028', 'W029']
+emotion: null   # ["neutral", "happy", "sad", "surprised", "fear", "disgusted", "angry", "contempt"]
+intensity: null # ["0", "1", "2"]
+
+
+# Composing nested config with default
+defaults:
+  - data: null
+  - machine: null
+  - trainer: null
+  - /path@path
+  - override hydra/job_logging: rich    # custom
+  - override hydra/hydra_logging: rich  # custom
+  - _self_
+
+data.batch_size: 1

@@ -1,0 +1,11 @@
+name: transformer_predictor
+_target_: framework.model.feature_predictor.transformer_pred.TransformerPredictor
+
+latent_dim: 256
+num_layers: 12
+num_heads: 8
+quant_factor: 0   # do not change this value
+intermediate_size: 384
+
+
+

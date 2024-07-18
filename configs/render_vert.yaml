@@ -1,0 +1,28 @@
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+
+logger_level: INFO
+progress_bar: true
+
+
+video_woA_folder: ${result_folder}/videos_no_audio/
+video_wA_folder: ${result_folder}/renders_vert/
+frames_folder: ${result_folder}/frames/
+
+result_folder: ???
+audio_folder: ${path.datasets}/mead/wav/
+
+subject_template_path: ${path.datasets}/flame_sample.ply
+
+defaults:
+  - logger: none
+  - /path@path
+  - override hydra/job_logging: rich    # custom
+  - override hydra/hydra_logging: rich  # custom
+  - _self_
+
+
+
+

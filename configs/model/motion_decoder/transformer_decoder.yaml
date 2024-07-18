@@ -1,0 +1,8 @@
+name: transformer_decoder
+_target_: framework.model.motion_decoder.transformer_decoder.TransformerDecoder
+
+latent_dim: 256
+num_layers: 6
+num_heads: 8
+quant_factor: 0    # do not change this value
+intermediate_size: 384

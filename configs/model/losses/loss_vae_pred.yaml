@@ -1,0 +1,15 @@
+_target_: framework.model.losses.compute_vae_pred.ComputeLosses
+
+# Latent loss
+lmd_latent: 1
+latent_manifold: ${.lmd_latent}
+latent_manifold_func: ${model.func_recons}
+
+# Reconstruction losses
+lmd_exp_recons: 0.15        # expression parameters
+recons_exp: ${.lmd_exp_recons}
+recons_exp_func: ${model.func_recons}
+
+lmd_jaw_recons: 0.1         # jaw parameters
+recons_jaw: ${.lmd_jaw_recons}
+recons_jaw_func: ${model.func_recons}

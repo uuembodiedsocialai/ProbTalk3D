@@ -1,0 +1,23 @@
+modelname: VAE variant
+_target_: framework.model.model_vae_pred.VaePredict
+
+vae_pred: true
+
+folder_prior: ???
+version_prior: ???
+ckpt_path_prior: ${get_last_checkpoint:${.folder_prior},${.version_prior},${ckpt_name}}
+
+working_dir: ${path.working_dir}
+
+seed: ${seed}
+video_framerate: ${data.video_framerate}
+
+defaults:
+  - feature_extractor: hubert
+  - feature_predictor: transformer_pred
+  - losses: loss_vae_pred
+  - optim: adam
+  - /model/model_vae_prior@motion_prior
+  - /model/losses/function/l1@func_recons
+  - /model/losses/function/kl@func_kl
+

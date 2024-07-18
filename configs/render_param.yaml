@@ -1,0 +1,29 @@
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+
+logger_level: INFO
+progress_bar: true
+
+renderBase_path: ${path.code_dir}/deps/render
+renderScript_path: ${renderBase_path}/blender_script.py
+blend_path: ${renderBase_path}/3DMEAD.blend
+blender_path: ${renderBase_path}/blender/blender
+
+result_folder: ???
+resultMotion_folder: ${result_folder}/
+
+audio_folder: ${path.datasets}/mead/wav/
+output_path: ${result_folder}/renders/
+
+defaults:
+  - logger: none
+  - /path@path
+  - override hydra/job_logging: rich    # custom
+  - override hydra/hydra_logging: rich  # custom
+  - _self_
+
+
+
+

@@ -1,0 +1,56 @@
+name: UNet
+_target_: framework.model.motion_autoencoder.unet.BeatGANsAutoencModel
+
+BeatGANsUNetConfig:
+  image_size: 64
+  in_channels: 3
+  # base channels, will be multiplied
+  model_channels: 64
+  # output of the unet
+  # suggest: 3
+  # you only need 6 if you also model the variance of the noise prediction (usually we use an analytical variance hence 3)
+  out_channels: 3
+  # how many repeating resblocks per resolution
+  # the decoding side would have "one more" resblock
+  # default: 2
+  num_res_blocks: 2
+  # you can also set the number of resblocks specifically for the input blocks
+  # default: None = above
+  num_input_res_blocks: none
+  # number of time embed channels and style channels
+  embed_channels: 512
+  # at what resolutions you want to do self-attention of the feature maps
+  # attentions generally improve performance
+  # default: [16]
+  # beatgans: [32, 16, 8]
+  attention_resolutions: 16
+  # number of time embed channels
+  time_embed_channels: none
+  # dropout applies to the resblocks (on feature maps)
+  dropout: 0.1
+  channel_mult: [1, 2, 4, 8]
+  input_channel_mult: none
+  conv_resample: true
+  # always 2 = 2d conv
+  dims: int = 2
+  # don't use this, legacy from BeatGANs
+  num_classes: none
+  use_checkpoint: false
+  # number of attention heads
+  num_heads: 1
+  # or specify the number of channels per attention head
+  num_head_channels: -1
+  # what's this?
+  num_heads_upsample: -1
+  # use resblock for upscale/downscale blocks (expensive)
+  # default: True (BeatGANs)
+  resblock_updown: true
+  # never tried
+  use_new_attention_order: false
+  resnet_two_cond: false
+  resnet_cond_channels: none
+  # init the decoding conv layers with zero weights, this speeds up training
+  # default: True (BeattGANs)
+  resnet_use_zero_module: true
+  # gradient checkpoint the attention operation
+  attn_checkpoint: false

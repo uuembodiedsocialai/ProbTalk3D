@@ -1,0 +1,6 @@
+_target_: framework.model.losses.compute_FaceDiff.ComputeLosses
+
+## Reconstruction losses 
+lmd_recons: 1
+recons: ${.lmd_recons}
+recons_func: ${model.func_recons}

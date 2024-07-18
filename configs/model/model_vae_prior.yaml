@@ -1,0 +1,18 @@
+modelname: VAE Motion Autoencoder
+_target_: framework.model.model_vae_prior.VAE
+
+# flag
+vae_prior: true
+
+# latent dimension
+latent_dim: 256
+
+working_dir: ${path.working_dir}
+
+defaults:
+  - motion_encoder: transformer_encoder
+  - motion_decoder: transformer_decoder
+  - losses: loss_vae_prior
+  - optim: adamw
+  - /model/losses/function/l1@func_recons
+  - /model/losses/function/kl@func_kl

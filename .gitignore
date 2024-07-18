@@ -1,0 +1,4 @@
+.idea/
+model_weights/
+**/__pycache__/
+

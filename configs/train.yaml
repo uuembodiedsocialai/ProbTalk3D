@@ -1,0 +1,32 @@
+hydra:
+  run:
+    dir: outputs/${data.data_name}/${experiment}/${run_id}
+  job:          # automatically go to the job folder (needed for hydra > 1.2 with new behavior)
+    chdir: true
+    
+# Global configurations shared between different modules
+experiment: ""  # experiment name
+
+seed: 1234
+
+logger_level: INFO
+run_id: ${generate_id:}   # function defined in prepare.py
+
+folder: ""      # resume training: ckpt folder name
+version: 0      # resume training: ckpt folder version
+ckpt_name: last.ckpt
+ckpt_path: ${get_last_checkpoint:${folder},${version},${ckpt_name}}
+state: ""       # training state: new, resume   * mandatory
+
+# Composing nested config with default
+defaults:
+  - data: ""    # data configuration            * mandatory
+  - model: ""   # model configuration           * mandatory
+  - machine: server
+  - trainer: gpu
+  - logger: none
+  - callback: base
+  - /path@path  # path configuration (loaded from configs/path.yaml)
+  - override hydra/job_logging: rich    # custom
+  - override hydra/hydra_logging: rich  # custom
+  - _self_

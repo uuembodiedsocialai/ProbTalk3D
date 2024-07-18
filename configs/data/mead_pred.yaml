@@ -1,0 +1,41 @@
+data_name: MEAD
+_target_: framework.data.mead.MeadDataModule
+
+# Paths
+motion_path: ${path.datasets}/mead/param
+audio_path: ${path.datasets}/mead/wav
+split_path: ${path.datasets}/mead-splits-pred
+
+load_audio: true
+
+# Machine
+batch_size: ${machine.batch_size}
+num_workers: ${machine.num_workers}
+
+# Motion
+video_framerate: 25
+
+# Other
+progress_bar: true
+tiny: false  # use a tiny part of the dataset to get the data properties
+debug: false # use a small part of the dataset for debugging
+
+# One-hot encoding
+one_hot_dim: [32, 8, 3]  # total number of identities, emotions, intensities
+
+#info
+#emo_dict = {
+#        \"0\" : \"neutral\",   # only have intensity level 1
+#        \"1\" : \"happy\",
+#        \"2\" : \"sad\",
+#        \"3\" : \"surprised\",
+#        \"4\" : \"fear\",
+#        \"5\" : \"disgusted\"
+#        \"6\" : \"angry\",
+#        \"7\" : \"contempt\"
+#    },
+#intensity_dict = {
+#        \"0\" : \"low\",
+#        \"1\" : \"medium\",
+#        \"2\" : \"high\",
+#    }

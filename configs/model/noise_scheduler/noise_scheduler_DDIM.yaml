@@ -1,0 +1,6 @@
+_target_: diffusers.DDIMScheduler
+
+num_train_timesteps: 1000
+beta_schedule: 'squaredcos_cap_v2'
+prediction_type: 'epsilon'
+

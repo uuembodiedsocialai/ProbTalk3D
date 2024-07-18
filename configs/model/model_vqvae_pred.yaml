@@ -1,0 +1,24 @@
+modelname: ProbTalk3D
+_target_: framework.model.model_vqvae_pred.VqvaePredict
+
+# flag
+vqvae_pred: true
+
+folder_prior: ???
+version_prior: ???
+ckpt_path_prior: ${get_last_checkpoint:${.folder_prior},${.version_prior},${ckpt_name}}
+
+working_dir: ${path.working_dir}
+
+seed: ${seed}
+video_framerate: ${data.video_framerate}
+
+defaults:
+  - feature_extractor: hubert
+  - feature_predictor: transformer_pred
+  - losses: loss_vqvae_pred
+  - optim: adam
+  - /model/model_vqvae_prior@motion_prior
+  - /model/losses/function/l1@func_recons
+
+

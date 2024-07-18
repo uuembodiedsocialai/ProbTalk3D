@@ -1,0 +1,24 @@
+data_name: MEAD
+_target_: framework.data.mead.MeadDataModule
+
+# Paths
+motion_path: ${path.datasets}/mead/param
+audio_path: ${path.datasets}/mead/wav
+split_path: ${path.datasets}/mead-splits-prior
+
+load_audio: false
+
+# Machine
+batch_size: ${machine.batch_size}
+num_workers: ${machine.num_workers}
+
+# Motion
+video_framerate: 25
+
+# Other
+progress_bar: true
+tiny: false  # use a tiny part of the dataset to get the data properties
+debug: false # use a small part of the dataset for debugging
+
+# One-hot encoding
+one_hot_dim: [32, 8, 3]  # total number of identities, emotions, intensities
