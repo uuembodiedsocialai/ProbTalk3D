@@ -3,7 +3,7 @@ Official PyTorch implementation for the paper:
 
 > **ProbTalk3D: Non-Deterministic Emotion Controllable Speech-Driven 3D Facial Animation Synthesis Using VQ-VAE.**
 >
-> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/Project-Website-blue'></a><a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/Paper-red'></a><a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/arXiv-[]-red'></a> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/Project-Video-Green'></a> 
+> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/Project-Website-blue'></a> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/Paper-red'> </a><a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/arXiv-[]-red'></a> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/Project-Video-Green'></a> 
 > 
 > We propose ProbTalk3D, a VQ-VAE based probabilistic model for emotion controllable speech-driven 3D facial animation synthesis. ProbTalk3D first learns a motion prior using VQ-VAE codebook matching, then trains a speech and emotion conditioned network leveraging this prior. During inference, probabilistic sampling of latent codebook embeddings enables non-deterministic outputs.
 
