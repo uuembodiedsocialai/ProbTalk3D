@@ -3,7 +3,7 @@ Official PyTorch implementation for the paper:
 
 > **ProbTalk3D: Non-Deterministic Emotion Controllable Speech-Driven 3D Facial Animation Synthesis Using VQ-VAE.**
 >
-> <a href='https://arxiv.org/abs/?'><img src='https://img.shields.io/badge/arXiv-[]-red'></a> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/Project-Video-Green'></a> 
+> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/Project-Website-blue'></a><a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/Paper-red'></a><a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/arXiv-[]-red'></a> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/Project-Video-Green'></a> 
 > 
 > We propose ProbTalk3D, a VQ-VAE based probabilistic model for emotion controllable speech-driven 3D facial animation synthesis. ProbTalk3D first learns a motion prior using VQ-VAE codebook matching, then trains a speech and emotion conditioned network leveraging this prior. During inference, probabilistic sampling of latent codebook embeddings enables non-deterministic outputs.
 
@@ -36,11 +36,10 @@ pip install -r requirements.txt
 
 Download 3DMEAD dataset following the instruction of [EMOTE](https://github.com/radekd91/inferno/tree/release/EMOTE/inferno_apps/TalkingHead/data_processing). This dataset represents facial animations using FLAME parameters.
 
-### Data Preprocess 
-- Execute the following command to preprocess the downloaded data. After processing, the resulting `*.npy` files should be located in the `datasets/mead/param` folder, and the `.wav` files should be in the `datasets/mead/wav` folder.
-    ```
-    python XXX.py (KAZI, could you please add this part?)
-    ```
+### Data Download and Preprocess 
+- Please refer to the `README.md` file in `datasets/3DMEAD_preprocess/` folder. 
+- After processing, the resulting `*.npy` files will be located in the `datasets/mead/param` folder, and the `.wav` files should be in the `datasets/mead/wav` folder.
+
 - <b> Optional Operation </b>
     <details><summary>Click to expand</summary>
     

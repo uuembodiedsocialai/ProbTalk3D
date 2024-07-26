@@ -94,14 +94,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            3D facial animation is crucial in video games, films, and entertainment industries.
-            With advancements in AI and deep learning, research is increasingly focused on data-driven methods for facial animation synthesis.
-            Non-deterministic deep learning methodologies are becoming popular due to their ability to generate realistic and diverse outputs.
-            These methods have been extensively studied in various fields, especially in image synthesis.
-            However, their usage in 3D facial animation generations has received comparatively less attention.
-            Our work introduces a probabilistic model ProbTalk3D, leveraging VQ-VAE for facial motion learning and a conditioned network for emotion controllable speech-driven animation systhesis.
-            We provide extensive comparative analyses, comparing ProbTalk3D with the latest VAE and diffusion based models.
-            Evaluations demonstrate that our proposed model achieves comparable or superior performance compared to state-of-the-art models.
+            Audio-driven 3D facial animation synthesis has been an active field of research with attention from both academia and industry. While there are promising results in this area, recent approaches largely focus on lip-sync and identity control, neglecting the role of emotions and emotion control in the generative process. That is mainly due to the lack of emotionally rich facial animation data and algorithms that can synthesize speech animations with emotional expressions at the same time. In addition, majority of the models are deterministic, meaning given the same audio input, they produce the same output motion. We argue that emotions and non-determinism are crucial to generate diverse and emotionally-rich facial animations. In this paper, we propose ProbTalk3D a non-deterministic neural network approach for emotion controllable speech-driven 3D facial animation synthesis using a two-stage VQ-VAE model and an emotionally rich facial animation dataset 3DMEAD. We provide an extensive comparative analysis of our model against the recent 3D facial animation synthesis approaches, by evaluating the results objectively, qualitatively, and with a perceptual user study. We highlight several objective metrics that are more suitable for evaluating stochastic outputs and use both in-the-wild and ground truth data for subjective evaluation. To our knowledge, that is the first non-deterministic 3D facial animation synthesis method incorporating a rich emotion dataset and emotion control with emotion labels and intensity levels. Our evaluation demonstrates that the proposed model achieves superior performance compared to state-of-the-art emotion-controlled, deterministic and non-deterministic models. We recommend watching the supplementary video for quality judgement.
           </p>
         </div>
       </div>
