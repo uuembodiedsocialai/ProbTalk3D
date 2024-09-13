@@ -3,7 +3,7 @@ Official PyTorch implementation for the paper:
 
 > **ProbTalk3D: Non-Deterministic Emotion Controllable Speech-Driven 3D Facial Animation Synthesis Using VQ-VAE. (Accepted at [ACM SIGGRAPH MIG 2024](https://sgmig.hosting.acm.org/mig-2024/))**
 >
-> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/Project-Website-blue'></a> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/Paper-red'></a> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/arXiv-[]-red'></a> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/#video-container'><img src='https://img.shields.io/badge/Project-Video-Green'></a> 
+> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/'><img src='https://img.shields.io/badge/Project-Website-blue'></a> <a href='https://arxiv.org/pdf/2409.07966'><img src='https://img.shields.io/badge/Paper-red'></a> <a href='https://arxiv.org/pdf/2409.07966'><img src='https://img.shields.io/badge/arXiv-[]-red'></a> <a href='https://uuembodiedsocialai.github.io/ProbTalk3D/#video-container'><img src='https://img.shields.io/badge/Project-Video-Green'></a> 
 > 
 > We propose ProbTalk3D, a VQ-VAE based probabilistic model for emotion controllable speech-driven 3D facial animation synthesis. ProbTalk3D first learns a motion prior using VQ-VAE codebook matching, then trains a speech and emotion conditioned network leveraging this prior. During inference, probabilistic sampling of latent codebook embeddings enables non-deterministic outputs.
 
@@ -275,13 +275,17 @@ python render_vert.py result_folder=diffusion/results/generation audio_folder=re
 ## Citation ## 
 If you find the code useful for your work, please consider starring this repository and citing it:
 ```
-@misc{ProbTalk3D_Wu_MIG2024,
-        author = {Wu, Sichun and Haque,  Kazi Injamamul and Yumak,  Zerrin},
-        title = {ProbTalk3D: Non-Deterministic Emotion Controllable Speech-Driven 3D Facial Animation Synthesis Using VQ-VAE},
-        year = {2024}
-        }
+@misc{wu2024probtalk3dnondeterministicemotioncontrollable,
+      title={ProbTalk3D: Non-Deterministic Emotion Controllable Speech-Driven 3D Facial Animation Synthesis Using VQ-VAE}, 
+      author={Sichun Wu and Kazi Injamamul Haque and Zerrin Yumak},
+      year={2024},
+      eprint={2409.07966},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2409.07966}, 
+}
         
-PS: The inproceedings bibtex will be available upon getting the DOI from ACM. 
+% PS: The inproceedings bibtex will be available upon getting the DOI from ACM. 
 
 ```
 
