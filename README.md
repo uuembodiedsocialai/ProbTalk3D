@@ -277,17 +277,18 @@ python render_vert.py result_folder=diffusion/results/generation audio_folder=re
 ## Citation ## 
 If you find the code useful for your work, please consider starring this repository and citing it:
 ```
-@misc{wu2024probtalk3dnondeterministicemotioncontrollable,
-      title={ProbTalk3D: Non-Deterministic Emotion Controllable Speech-Driven 3D Facial Animation Synthesis Using VQ-VAE}, 
-      author={Sichun Wu and Kazi Injamamul Haque and Zerrin Yumak},
-      year={2024},
-      eprint={2409.07966},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2409.07966}, 
-}
-        
-% PS: The inproceedings bibtex will be available upon getting the DOI from ACM. 
+@inproceedings{Probtalk3D_Wu_MIG24,
+        author = {Wu, Sichun and Haque,  Kazi Injamamul and Yumak,  Zerrin},
+        title = {ProbTalk3D: Non-Deterministic Emotion Controllable Speech-Driven 3D Facial Animation Synthesis Using VQ-VAE},
+        booktitle = {The 16th ACM SIGGRAPH Conference on Motion, Interaction, and Games (MIG '24), November 21--23, 2024, Arlington, VA, USA},
+        year = {2024},
+        location = {Arlington, VA, USA},
+        numpages = {12},
+        url = {https://doi.org/10.1145/3677388.3696320},
+        doi = {10.1145/3677388.3696320},
+        publisher = {ACM},
+        address = {New York, NY, USA}
+        } 
 
 ```
 
