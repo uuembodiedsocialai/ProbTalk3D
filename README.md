@@ -280,7 +280,7 @@ If you find the code useful for your work, please consider starring this reposit
 @inproceedings{Probtalk3D_Wu_MIG24,
         author = {Wu, Sichun and Haque,  Kazi Injamamul and Yumak,  Zerrin},
         title = {ProbTalk3D: Non-Deterministic Emotion Controllable Speech-Driven 3D Facial Animation Synthesis Using VQ-VAE},
-        booktitle = {The 16th ACM SIGGRAPH Conference on Motion, Interaction, and Games (MIG '24), November 21--23, 2024, Arlington, VA, USA},
+        booktitle = {The 17th ACM SIGGRAPH Conference on Motion, Interaction, and Games (MIG '24), November 21--23, 2024, Arlington, VA, USA},
         year = {2024},
         location = {Arlington, VA, USA},
         numpages = {12},
